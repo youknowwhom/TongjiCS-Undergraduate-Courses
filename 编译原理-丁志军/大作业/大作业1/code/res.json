@@ -1,0 +1,256 @@
+{
+  "root": "Program",
+  "children": [
+    {
+      "root": "DeclarationString",
+      "children": [
+        {
+          "root": "Declaration",
+          "children": [
+            { "root": "Type", "children": [{ "root": "int", "children": [] }] },
+            { "root": "identifier", "children": [] },
+            {
+              "root": "DeclarationType",
+              "children": [
+                {
+                  "root": "VarDeclaration",
+                  "children": [{ "root": ";", "children": [] }]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "root": "Declarations",
+          "children": [
+            {
+              "root": "Declaration",
+              "children": [
+                {
+                  "root": "Type",
+                  "children": [{ "root": "int", "children": [] }]
+                },
+                { "root": "identifier", "children": [] },
+                {
+                  "root": "DeclarationType",
+                  "children": [
+                    {
+                      "root": "VarDeclaration",
+                      "children": [{ "root": ";", "children": [] }]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "root": "Declarations",
+              "children": [
+                {
+                  "root": "Declaration",
+                  "children": [
+                    {
+                      "root": "Type",
+                      "children": [{ "root": "int", "children": [] }]
+                    },
+                    { "root": "identifier", "children": [] },
+                    {
+                      "root": "DeclarationType",
+                      "children": [
+                        {
+                          "root": "FunctionDeclaration",
+                          "children": [
+                            { "root": "(", "children": [] },
+                            {
+                              "root": "Parameters",
+                              "children": [
+                                {
+                                  "root": "ParamVar",
+                                  "children": [
+                                    { "root": "int", "children": [] },
+                                    { "root": "identifier", "children": [] }
+                                  ]
+                                },
+                                {
+                                  "root": "ParamVars",
+                                  "children": [
+                                    { "root": ",", "children": [] },
+                                    {
+                                      "root": "ParamVar",
+                                      "children": [
+                                        { "root": "float", "children": [] },
+                                        { "root": "identifier", "children": [] }
+                                      ]
+                                    },
+                                    {
+                                      "root": "ParamVars",
+                                      "children": [
+                                        { "root": ",", "children": [] },
+                                        {
+                                          "root": "ParamVar",
+                                          "children": [
+                                            { "root": "int", "children": [] },
+                                            {
+                                              "root": "identifier",
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            { "root": ")", "children": [] },
+                            {
+                              "root": "Block",
+                              "children": [
+                                { "root": "{", "children": [] },
+                                {
+                                  "root": "InnerDeclaration",
+                                  "children": [
+                                    {
+                                      "root": "InnerVarDeclaration",
+                                      "children": [
+                                        {
+                                          "root": "Type",
+                                          "children": [
+                                            { "root": "int", "children": [] }
+                                          ]
+                                        },
+                                        { "root": "identifier", "children": [] }
+                                      ]
+                                    },
+                                    { "root": ";", "children": [] },
+                                    {
+                                      "root": "InnerVarDeclarations",
+                                      "children": [
+                                        {
+                                          "root": "InnerVarDeclaration",
+                                          "children": [
+                                            {
+                                              "root": "Type",
+                                              "children": [
+                                                {
+                                                  "root": "int",
+                                                  "children": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "root": "identifier",
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        { "root": ";", "children": [] }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "root": "StatementString",
+                                  "children": [
+                                    {
+                                      "root": "Statement",
+                                      "children": [
+                                        {
+                                          "root": "AssignStatement",
+                                          "children": [
+                                            {
+                                              "root": "identifier",
+                                              "children": []
+                                            },
+                                            { "root": "=", "children": [] },
+                                            {
+                                              "root": "Expression",
+                                              "children": [
+                                                {
+                                                  "root": "Add",
+                                                  "children": [
+                                                    {
+                                                      "root": "Item",
+                                                      "children": [
+                                                        {
+                                                          "root": "Factor",
+                                                          "children": [
+                                                            {
+                                                              "root": "integer_constant",
+                                                              "children": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            { "root": ";", "children": [] }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "root": "Statements",
+                                      "children": [
+                                        {
+                                          "root": "Statement",
+                                          "children": [
+                                            {
+                                              "root": "ReturnStatement",
+                                              "children": [
+                                                {
+                                                  "root": "return",
+                                                  "children": []
+                                                },
+                                                {
+                                                  "root": "Expression",
+                                                  "children": [
+                                                    {
+                                                      "root": "Add",
+                                                      "children": [
+                                                        {
+                                                          "root": "Item",
+                                                          "children": [
+                                                            {
+                                                              "root": "Factor",
+                                                              "children": [
+                                                                {
+                                                                  "root": "identifier",
+                                                                  "children": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                { "root": ";", "children": [] }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                { "root": "}", "children": [] }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

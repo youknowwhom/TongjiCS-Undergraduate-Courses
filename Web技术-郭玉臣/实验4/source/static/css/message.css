@@ -1,0 +1,75 @@
+#message-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#message-container .message {
+    background: #fff;
+    margin: 15px 0;
+    padding: 0 10px;
+    height: 40px;
+    box-shadow: 0 0 5px 0 rgba(102, 205, 171, 0.2);
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-family: '思源黑体';
+
+    display: flex;
+    align-items: center;
+
+    transition: height 0.2s ease-in-out, margin 0.2s ease-in-out;
+}
+
+/* 提示文字 */
+#message-container .message .text {
+    color: #333;
+    padding: 0 20px 0 5px;
+}
+
+/* 关闭图标 */
+#message-container .message .close {
+    cursor: pointer;
+    color: #999;
+}
+
+/* 消息图标 */
+#message-container .message {
+    color: mediumaquamarine;
+}
+
+@keyframes message-move-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#message-container .message.move-in {
+    animation: message-move-in 0.3s ease-in-out;
+}
+
+@keyframes message-move-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+#message-container .message.move-out {
+    animation: message-move-out 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}

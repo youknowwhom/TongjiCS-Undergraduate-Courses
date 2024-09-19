@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MintPlayer</title>
+        <link rel="stylesheet" href="/css/player.css">
+        <link rel="stylesheet" href="/css/message.css">
+        <link rel="stylesheet" href="http://at.alicdn.com/t/font_1117508_wxidm5ry7od.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>MintPlayer</h1>
+            <a href="{{ url_for('upload') }}">
+                <img src="./icon/upload.svg" class="button-img">
+            </a>
+            <p>欢迎登录，{{name}}</p>
+        </header>
+        <main class="content">
+            <div id="video-player">
+                <figure id="video-container">
+                    <div id="video-header-bar">
+                        <span id="video-name">《你好·李焕英》预告片</span>
+                    </div>
+
+                    <video id="video">
+                        <source src="/media/video1.mp4" type="video/mp4">
+                    </video>
+                    
+                    <div id="video-control-bar">
+                        <div id="progress-wrap">
+                            <progress id="progress" value = "0" min = "0"></progress>
+                            <div id="progress-dot"></div>
+                        </div>
+                        <div id="video-control-buttons">
+                            <div id="video-control-buttons-left">
+                                <img src="./icon/play.svg" id="playpause" class="button-img">
+                                <div class="time">
+                                    <span id="current-time">00:00</span>
+                                    <span>/</span>
+                                    <span id="total-time">00:00</span>
+                                </div>
+                            </div>
+                            <div id="video-control-buttons-right">
+                                <div id="multiple-speed">
+                                    <span id="multiple-speed-text">倍速</span>
+                                    <ul id="multiple-speed-choices">
+                                        <li class="multiple-speed-choice">2.0x</li>
+                                        <li class="multiple-speed-choice">1.75x</li>
+                                        <li class="multiple-speed-choice">1.25x</li> 
+                                        <li class="multiple-speed-choice">1.0x</li>
+                                        <li class="multiple-speed-choice">0.75x</li>
+                                        <li class="multiple-speed-choice">0.5x</li>
+                                    </ul>
+                                </div>
+                                <div id="volume">
+                                    <img src="./icon/volume.svg" id="mute" class="button-img">
+                                    <div id="volume-bar-holder">
+                                        <div id="volume-value">
+                                            100
+                                        </div>
+                                        <div id="volume-bar">
+                                            <div id="volume-bar-done">
+                                                <div id="volume-dot"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="settings-block">
+                                    <img src="./icon/settings.svg" id="settings" class="button-img">
+                                    <div id="settings-holder">
+                                        <div class="setting-choice">
+                                            <span class="prompt">循环播放</span>
+                                            <div class='switch-wrapper'>
+                                                <input type="checkbox" id="cycle" onclick="openVideoCycle(this)">
+                                                <label for="cycle"></label>
+                                            </div>                                       
+                                        </div>
+                                        <div class="setting-choice">
+                                            <span class="prompt">镜像翻转</span>
+                                            <div class='switch-wrapper'>
+                                                <input type="checkbox" id="mirror" onclick="openVideoMirror(this)">
+                                                <label for="mirror"></label>
+                                            </div>                 
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="./icon/picinpic.svg" id="picinpic" class="button-img">
+                                <img src="./icon/fullscreen.svg" id="fs" class="button-img">
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div id ="video-chooser">
+
+                </div>
+            </div>
+        </main>
+        <script type="text/javascript" src="/js/player.js"></script>
+        <script type="text/javascript" src="/js/message.js"></script>
+    </body>
+</html>

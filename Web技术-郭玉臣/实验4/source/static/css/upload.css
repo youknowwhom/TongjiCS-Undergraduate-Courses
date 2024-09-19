@@ -1,0 +1,173 @@
+/* 设置所有元素 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: '思源黑体';
+    background-image: linear-gradient(0deg, rgb(168, 219, 202), rgb(240, 253, 249));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 25px;
+    letter-spacing: 2.5px;
+    font-weight: bolder;
+}
+
+p {
+    font-size: 15px;
+    margin: 10px;
+    letter-spacing: 2.5px;
+    font-weight: lighter;
+}
+
+.container {
+    position: relative;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    height: 550px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.form-container form {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 35px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container input {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+
+    text-indent: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-family: '思源黑体';
+    font-weight: lighter;
+
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;    
+}
+
+.form-container label{
+    font-size: 15px;
+    font-family: '思源黑体';
+    margin: 5px 0;
+    color: mediumaquamarine;
+}
+
+.form-container button {
+    background: mediumaquamarine;
+    color: white;
+    border: 1px solid #fff;
+    
+    height: 42px;
+    width: 100%;
+
+    border-radius: 10px;
+    
+    margin: 20px;
+    font-family: '思源黑体';
+    font-size: 15px;
+    letter-spacing: 5px;
+
+    transition: all 100ms ease-in;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+button.switch {
+    background: transparent;
+    border-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    color: white;
+    
+    width: 80px;
+    height: 30px;
+    margin: 10px;
+    
+    font-size: 10px;
+    letter-spacing: 4px;
+    
+    transition: all 100ms ease-in;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.hint{
+    color: mediumaquamarine;
+    font-family: '思源黑体';
+    font-size: 10px;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.overlay {
+    background: mediumaquamarine;
+    width: 200%;
+    height: 100%;
+    position: relative;
+    left: -100%;
+    color: white;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.overlay-panel {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.overlay-right {
+    right: 0;
+}

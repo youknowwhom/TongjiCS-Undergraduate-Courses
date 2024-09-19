@@ -1,0 +1,80 @@
+:root {
+    --theme-color-main: rgb(17, 39, 77);
+    --theme-color-auxiliary: rgb(164, 92, 0);
+    --theme-color-light: rgb(232,238,249);
+    --theme-color-light2: rgb(248,250,253);
+  }
+
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 1024px;
+    height: 1440px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    background: url("decoration1.jpg") left top no-repeat, url("decoration2.jpg") right bottom no-repeat;
+    background-size: 680px 190px, 720px;
+    box-shadow: 0 0 30px rgba(128, 128, 128, 0.20);
+}
+
+.avatar{
+    height: 280px;
+    width: 280px;
+    border-radius: 100%;
+    border: solid;
+    border-width: 8px;
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(222, 222, 222);
+}
+
+.icon-context-block{
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.icon{
+    height: 60px;
+    width: 60px;
+    margin-right: 15px;
+}
+
+h1{
+    color: var(--theme-color-main);
+    font-family: 'Raleway';
+    text-align: center;
+    font-size: 100px;
+    letter-spacing: 8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+a{
+    text-decoration: none;
+}
+
+h3{
+    color: var(--theme-color-main);
+    font-family: 'PT Sans';
+    font-size: 35px;
+    font-weight: normal;
+    padding: 20px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    background-color: var(--theme-color-light);
+    border-radius: 10px;
+    width: fit-content;
+}
+
+
+p{
+    color: rgb(66, 66, 66);
+    font-size: 30px;
+    font-family: 'PT Sans';
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

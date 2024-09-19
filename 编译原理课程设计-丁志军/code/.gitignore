@@ -1,0 +1,5 @@
+dist
+node_modules
+__pycache__
+log.txt
+code.asm

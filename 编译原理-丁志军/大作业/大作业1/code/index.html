@@ -1,0 +1,75 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="ast-tree-view.css" />
+  <link rel="stylesheet" type="text/css" href="cpf.css" />
+</head>
+
+<body class="wrapper-maximize">
+  <div id="wrapper" class="wrapper-maximize flex flex-row space-x-4 p4 box-border">
+    <div id="cm-wrapper" class="relative basis-1/2 flex-initial max-w-1/2 flex flex-col">
+      <span class="me-4 inline-block font-sans px-2 py-1 text-gray-600 bg-white border-gray-600 mb2">代码编辑器</span>
+      <div id="cm-container" style="zoom: 2;" class="relative flex-1 rounded-none border-2 border-solid border-gray shadow-2xl overflow-auto"></div>
+    </div>
+    <div id="cpf-right-wrapper" class="relative basis-1/2 flex-initial max-w-1/2 flex flex-col">
+      <div class="flex-none flex flex-wrap text-center font-sans mb2 inline-block">
+        <button id="ast-tab-button"
+          class="cpf-tab-button me-4 flex-none px-2 py-1 text-gray-600 hover:text-white hover:bg-gray-600 border-gray-600"
+          onclick="window.cpf?.switchRightTab('ast')">语法分析树</button>
+        <button id="goto-tab-button"
+          class="cpf-tab-button me-4 flex-none px-2 py-1 text-gray-600 hover:text-white hover:bg-gray-600 border-gray-600"
+          onclick="window.cpf?.switchRightTab('goto')">GOTO 表</button>
+        <button id="action-tab-button"
+          class="cpf-tab-button me-4 flex-none px-2 py-1 text-gray-600 hover:text-white hover:bg-gray-600 border-gray-600"
+          onclick="window.cpf?.switchRightTab('action')">ACTION 表</button>
+        <button id="process-tab-button"
+          class="cpf-tab-button me-4 flex-none px-2 py-1 text-gray-600 hover:text-white hover:bg-gray-600 border-gray-600"
+          onclick="window.cpf?.switchRightTab('process')">移进 - 规约过程</button>
+        <div class="flex-1"></div>
+        <button id="ast-zoom-in"
+          class="cpf-tab-button ast-zoom-button me-4 flex-none px-2 py-1 text-gray-600 hover:text-white hover:bg-gray-600 border-gray-600">
+          放大
+        </button>
+        <button id="ast-zoom-out"
+          class="cpf-tab-button ast-zoom-button me-4 flex-none px-2 py-1 text-gray-600 hover:text-white hover:bg-gray-600 border-gray-600">
+          缩小
+        </button>
+      </div>
+
+      <div id="ast-container"
+        class="cpf-right relative flex-1 rounded-none border-2 border-solid border-gray shadow-2xl overflow-scroll">
+
+        <div id="ast-tree" class="ast-tree-view h-full w-full scroll-smooth font-mono subpixel-antialiased "></div>
+      </div>
+
+      <div id="goto-container"
+        class="cpf-right relative flex-1 rounded-none border-2 border-solid border-gray shadow-2xl overflow-scroll">
+
+        <div id="goto-table" class="goto-view cpf-table h-full w-full scroll-smooth font-mono subpixel-antialiased">
+        </div>
+      </div>
+
+      <div id="action-container"
+        class="cpf-right relative flex-1 rounded-none border-2 border-solid border-gray shadow-2xl overflow-scroll">
+
+        <div id="action-table" class="action-view cpf-table h-full w-full scroll-smooth font-mono subpixel-antialiased">
+        </div>
+      </div>
+
+      <div id="process-container"
+        class="cpf-right relative flex-1 rounded-none border-2 border-solid border-gray shadow-2xl overflow-scroll">
+
+        <div id="process-table" class="process-view cpf-table h-full w-full scroll-smooth font-mono subpixel-antialiased">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/cpf.js"></script>
+  <script type="module" src="/ast-tree-view.js"></script>
+  <script type="text/javascript" src="qrc:///qtwebchannel/qwebchannel.js"></script>
+</body>
+
+</html>

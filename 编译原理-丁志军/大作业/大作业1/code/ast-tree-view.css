@@ -1,0 +1,126 @@
+.ast-tree-view *,
+.ast-tree-view *::after,
+.ast-tree-view *::before {
+  box-sizing: inherit;
+}
+
+.ast-tree-view ul {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  padding-top: 2.5vh;
+  position: relative;
+  justify-content: center;
+}
+
+.ast-tree-view li {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2.5vh;
+}
+
+/* draw connectors between parent elements */
+.ast-tree-view ul::before {
+  content: "";
+  position: absolute;
+  top: 0vh;
+  left: 50%;
+  border: solid 2px;
+  border-color: rgb(0, 95, 142);
+  height: 2.5vh;
+}
+
+.ast-tree-view ul:first-child::before {
+  display: none;
+}
+
+/* draw connectors between siblings */
+/* vertical connectors */
+.ast-tree-view li::before {
+  content: "";
+  top: 0;
+  left: 50%;
+  height: 2.5vh;
+  position: absolute;
+  border: solid 2px;
+  border-color: rgb(0, 95, 142);
+}
+
+/* horizontal connectors */
+.ast-tree-view li::after {
+  content: "";
+  top: 0;
+  width: 100%;
+  position: absolute;
+  border-top: solid 2px;
+  border-color: rgb(0, 95, 142);
+}
+
+/* remove the horizontal connector for the only child */
+.ast-tree-view li:only-child::after {
+  display: none;
+}
+
+/* remove extra left and right horizontal connector */
+.ast-tree-view li:first-of-type::after {
+  width: 50%;
+  right: 0;
+}
+
+.ast-tree-view li:last-of-type::after {
+  width: 50%;
+  left: 0;
+}
+
+/* remove connectors before only child */
+.ast-tree-view li:only-child {
+  padding-top: 0;
+}
+
+.ast-tree-view li:only-child::before {
+  display: none;
+}
+
+/* adding styles */
+.ast-tree-view li div * {
+  padding: 0.3em;
+}
+
+.ast-tree-view li div {
+  padding: 0.5em;
+  margin: 0 1em;
+  border-radius: 2px;
+  text-align: center;
+  transition: all 0.3s ease-out;
+  background: rgb(207, 239, 255);
+  border-color: rgb(0, 95, 142);
+  border-width: 2px;
+  box-shadow: 2px 20px 50px 0 rgb(0 0 0 / 7%);
+}
+
+.ast-tree-view span {
+  display: block;
+  color: rgb(0, 57, 86)
+}
+
+.ast-tree-view li div span:nth-child(3) {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* hover effect*/
+.ast-tree-view li div:hover,
+.ast-tree-view li div:hover + ul li div {
+  background: rgb(173, 228, 255);
+  transform: scale(1.02) translateY(-0.2rem);
+}
+
+/* .ast-tree-view li div:hover + ul li::after,
+.ast-tree-view li div:hover + ul li::before,
+.ast-tree-view li div:hover + ul::before,
+.ast-tree-view li div:hover + ul ul::before {
+  border-color: rgb(206, 188, 188);
+  transform: scale(1) translateY(-0.3rem);
+} */

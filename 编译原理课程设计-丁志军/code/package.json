@@ -1,0 +1,26 @@
+{
+  "name": "cpf",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "pnpm build-frontend && pnpm preview",
+    "build-frontend": "vite build . --outDir dist/frontend",
+    "build-backend": "pyinstaller main.py -F -w -y --distpath dist/pyi --specpath dist --clean --add-data frontend:./dist/frontend",
+    "build": "pnpm build-frontend && pnpm build-backend",
+    "preview": "python main.py",
+    "def-frontend": "vite --cors"
+  },
+  "contributors": [
+    {
+      "name": "Boyuan Zheng"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@unocss/reset": "^0.57.7",
+    "jquery": "^3.7.1",
+    "monaco-editor": "^0.44.0",
+    "qwebchannel": "^6.2.0",
+    "unocss": "^0.57.7",
+    "vite": "^5.0.0"
+  }
+}

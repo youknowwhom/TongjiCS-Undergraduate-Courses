@@ -1,0 +1,460 @@
+html{
+    height: 100%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(0deg, rgb(168, 219, 202), rgb(240, 253, 249));
+}   
+
+
+#video-player{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    height: 405px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+figure {
+    position: relative;
+    display: flex;
+    height: 405px;
+    width: 720px;
+    margin: auto;
+    background: no-repeat;
+    background-size: contain;
+    background-color: black;
+    background-position: center;
+}
+
+video {
+    display: block;
+    margin: auto;
+    width: 100%;
+    user-select: none;
+}
+
+/* 视频选择栏 */
+#video-chooser {
+    height: 100%;
+    width: 290px;
+    overflow-y: auto;
+    background-color: rgb(234, 245, 242);
+    user-select: none;
+}
+
+.video-alternative{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+
+.video-alternative:hover .title{
+    font-weight: bolder;
+}
+
+.video-alternative:hover .subtitle{
+    font-weight: normal;
+}
+
+
+.video-alternative img{
+    width: 80px;
+    border-radius: 6px;
+}
+
+.video-alternative .title{
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin: 0;
+    font-family: '思源黑体';
+    color: black;
+}
+
+.video-alternative .subtitle{
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 0;
+    font-family: '思源黑体';
+    font-weight: lighter;
+    color: mediumaquamarine;
+}
+
+.video-alternative .detail{
+    width: 60%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+/* 进度条 */
+#progress-wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#progress {
+    height: 6px;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    flex: 0 0 auto;
+    cursor: pointer;
+    /* 兼容IE 已完成进度背景色 */
+    color: mediumaquamarine;
+    /* 兼容IE FireFox 总长度背景色 */
+    background: lightgray;
+}
+
+/* Chrome 表示总长度背景色 */
+#progress::-webkit-progress-bar {
+    background-color: lightgray;
+}
+
+/* Chrome 表示已完成进度背景色 */
+#progress::-webkit-progress-value {
+    background-color: mediumaquamarine;
+}
+
+/* 兼容FireFox 表示已完成进度背景色 */
+#progress::-moz-progress-bar {
+    background-color: mediumaquamarine
+}
+
+
+/* 进度条圆点 */
+#progress-dot {
+    margin-left: -6px;
+    top: 11px;
+    width: 12px;
+    height: 12px;
+    background: white;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+/* 按钮图标 */
+.button-img {
+    width: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+/* 时间显示 */
+.time{
+    padding-left: 10px;
+    color:lightgray;
+    font-size: 14px;
+    letter-spacing: 0.75px;
+    font-family:'Century Gothic';
+}
+
+
+#video-container:hover #video-header-bar{
+    visibility: visible;
+}
+
+/* 顶部视频名栏 */
+#video-header-bar {
+    height: 50px;
+    width: 100%;
+    
+    position: absolute;
+    
+    left: 0;
+    top: 0;
+    user-select: none;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.1));
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: center;
+
+    visibility: hidden;
+}
+
+#video-header-bar span{
+    padding-left: 20px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+#video-container:hover #video-control-bar{
+    visibility: visible;
+}
+
+/* 下端控制进度条 */
+#video-control-bar {
+    height: 70px;
+    width: 100%;
+    
+    position: absolute;
+    
+    left: 0;
+    bottom: 0;
+    user-select: none;
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(0,0,0,0));
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+
+    visibility: hidden;
+}
+
+#video-control-buttons {
+    flex: 1 1 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#video-control-buttons-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#video-control-buttons-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#multiple-speed{
+    color: white;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#volume{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#volume:hover #volume-bar-holder{
+    visibility: visible;
+}
+
+#volume-bar-holder{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    left: 50%;
+    bottom: 25px;
+
+    width: 40px;
+    height: 120px;
+    border-radius: 5px;
+    transform:translate(-50%, 0);
+
+    background-color: rgba(14, 12, 15, 0.8);
+    
+    visibility: hidden;
+}
+
+#volume-value{
+    color: white;
+    font-size: 10px;
+    font-family:'Century Gothic';
+}
+
+#volume-bar{
+    position: relative;
+    height: 70px;
+    width: 2px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+#volume-bar-done{
+    position: absolute;
+    height: 70px;
+    width: 2px;
+    background-color: mediumaquamarine;
+    bottom: 0;
+}
+
+#volume-dot{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #fff;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+}
+
+
+#multiple-speed{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#multiple-speed:hover #multiple-speed-choices{
+    visibility: visible;
+}
+
+#multiple-speed-choices{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    left: 50%;
+    bottom: 7px;
+
+    width: 60px;
+    height: 180px;
+    padding: 0px;
+    border-radius: 8px;
+    transform:translate(-50%, 0);
+
+    background-color: rgba(14, 12, 15, 0.8);
+    overflow:hidden;
+    visibility: hidden;
+}
+
+#multiple-speed-text{
+    font-size: 15px;
+    letter-spacing: 5px;
+}
+
+.multiple-speed-choice{
+    list-style: none;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 13px;
+    font-family:'Century Gothic';
+    letter-spacing: 0.75px;
+    text-align: center;
+}
+
+.multiple-speed-choice:hover{
+    background-color: rgba(255, 255, 255, 0.3)
+}
+
+#settings-block{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#settings-block:hover #settings-holder{
+    visibility: visible;
+}
+
+#settings-holder{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    left: 50%;
+    bottom: 25px;
+
+    width: 120px;
+    height: 90px;
+    border-radius: 5px;
+    transform:translate(-50%, 0);
+
+    background-color: rgba(14, 12, 15, 0.8);
+    
+    visibility: hidden;
+}
+
+.setting-choice{
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.prompt{
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.setting-choice:hover .prompt{
+    color: mediumaquamarine;
+}
+
+
+.switch-wrapper input{
+    display: none;
+}
+
+.switch-wrapper label{
+    position: relative;
+    background: grey;
+    cursor: pointer;
+    width: 25px;
+    height: 15px;
+    border-radius: 100px;
+    display: block;
+}
+
+.switch-wrapper label::before {
+    content:'';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background:white;
+    transition: all 0.36s;
+    top: 0px;
+    left: 0px;
+}
+
+.switch-wrapper input:checked + label {
+    background: mediumaquamarine;
+    transition: all 0.36s cubic-bezier(.78, .14, .15, .86);
+}
+
+.switch-wrapper input:checked + label::before {
+    left: 100%;
+    transform: translateX(-100%);
+    transition: all 0.36s cubic-bezier(.78, .14, .15, .86);
+}
+
+/* 解决switch消失时的延缓问题 */
+#settings-holder:not(:hover) .switch-wrapper label::before{
+    transition: all 0s;
+}
+
+#settings-holder:not(:hover) .switch-wrapper label{
+    transition: all 0s;
+}

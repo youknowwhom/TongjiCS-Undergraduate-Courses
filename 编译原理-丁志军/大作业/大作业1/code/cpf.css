@@ -1,0 +1,71 @@
+.cpf-right {
+  display: none;
+}
+
+.cpf-active-tab {
+  background-color: gainsboro;
+}
+
+.wrapper-maximize {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.cm-editor {
+  height: 100%;
+}
+
+.cm-scroller {
+  overflow: auto;
+}
+
+.cpf-table table {
+  border-collapse: separate;
+  border-spacing: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.cpf-table td {
+  padding: 8px;
+  border: solid black;
+  border-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0.33) 4px 4px 8px 1px;
+  background: white;
+}
+
+[class*=cpf-unique-token] {
+  border: 2px solid;
+  border-radius: 2px;
+}
+
+.cpf-all-token {
+  border-color: #ffe60020;
+  background-color: #ffe60004;
+}
+
+.cpf-invalid-token {
+  border-color: #FF000080;
+  background-color: #FF000030;
+}
+
+.cpf-error {
+  text-decoration: red wavy underline;
+}
+
+.cpf-token-identifier {
+  color: rgb(41, 41, 41) !important;
+}
+
+.cpf-token-constant {
+  color: green !important;
+}
+
+.cpf-token-keyword {
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(0, 112, 203) !important;
+}

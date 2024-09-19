@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MintPlayer - 登录注册</title>
+        <link rel="stylesheet" href="/css/login.css">
+    </head>
+
+    <body>
+        <div class='container' id='container'>
+            <div class="form-container sign-up-container">
+            <form id="signUpForm" action="/signup" method="post" onsubmit="signUpEncryption()">
+                <h1>用户注册</h1>
+                <input type="text" name="username" placeholder="用户名" required>
+                <input type="password" id="signUpPwd" placeholder="密码" required>
+                <input type="hidden" id="signUpPwdMd5" name="password">
+                <input type="email" name="email" placeholder="邮箱" required>
+                {% with messages = get_flashed_messages() %}
+                    <div class="hint">{{ messages[0] }}</div>
+                {% endwith %}
+                <button type="submit">注册</button>
+            </form>
+            </div>
+            <div id="signInForm" class="form-container sign-in-container">
+                <form action="/login" method="post" onsubmit="signInEncryption()">
+                    <h1>用户登录</h1>
+                    <input type="text" name="username" placeholder="用户名" required>
+                    <input type="password" id="signInPwd" placeholder="密码" required>
+                    <input type="hidden" id="signInPwdMd5" name="password">
+                    {% with messages = get_flashed_messages() %}
+                        <div class="hint">{{ messages[0] }}</div>
+                    {% endwith %}
+                    <button type="submit">登录</button>
+                </form>
+            </div>
+            
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>已有帐号？</h1>
+                        <p>点击下方按钮登录MintPlayer</p>
+                        <button class='switch' id="signIn">登录</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>还未注册？</h1>
+                        <p>点击注册你的MintPlayer账号</p>
+                        <button class='switch' id="signUp">注册</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="/js/login.js"></script>
+    <script src="/js/md5.js"></script>
+</html>

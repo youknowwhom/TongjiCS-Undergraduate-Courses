@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MintPlayer - 视频上传</title>
+        <link rel="stylesheet" href="/css/upload.css">
+    </head>
+
+    <body>
+        <div class='container' id='container'>
+            <div id="signInForm" class="form-container sign-in-container">
+                <form action="/upload" method="post" enctype="multipart/form-data" onsubmit="encryption()">
+                    <label>标题</label>
+                    <input type="text" name="title" placeholder="在此输入标题" required>
+                    <label>副标题</label>
+                    <input type="text" name="subtitle" placeholder="在此输入副标题" required>
+                    <label>媒体缩略图</label>
+                    <input type="file" accept="image/png, image/jpeg" name="picSrc" required>
+                    <label>媒体源</label>
+                    <input type="file" accept="video/mp4" name="mediaSrc" required>
+                    {% with messages = get_flashed_messages() %}
+                        <div class="hint">{{ messages[0] }}</div>
+                    {% endwith %}
+                    <button type="submit">上传</button>
+                </form>
+            </div>
+            
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <h1>上传视频</h1>
+                        <p>为MintPlayer提供优质资源</p>
+                        <a href="{{ url_for('player') }}">
+                            <button class='switch' id="signUp">返回</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "typhoontracker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@vuemap/vue-amap": "^2.1.1",
+    "@vuemap/vue-amap-extra": "^2.1.1",
+    "@vuemap/vue-amap-loca": "^2.1.1",
+    "axios": "^1.6.8",
+    "china-area-data": "^5.0.1",
+    "china-division": "^2.7.0",
+    "echarts": "^5.5.0",
+    "element-china-area-data": "^5.0.2",
+    "element-plus": "^2.7.0",
+    "elui-china-area-dht": "^2.0.0",
+    "path": "^0.12.7",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.1.6"
+  }
+}

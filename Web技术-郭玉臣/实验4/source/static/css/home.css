@@ -1,0 +1,36 @@
+html{
+    height: 100%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(0deg, rgb(168, 219, 202), rgb(240, 253, 249));
+}   
+
+h1{
+    font-size: 120px;
+    font-family:'Century Gothic';
+    margin: 0;
+}
+
+h2{
+    font-size: 35px;
+    font-family: '思源黑体';
+    color: rgb(107, 182, 158);
+    margin: 0;
+}
+
+h3{
+    color: rgb(143, 163, 156);
+}
+
+a{
+    text-decoration: none;
+    user-select: none;
+}
