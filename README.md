@@ -1,6 +1,6 @@
 # TongjiCS-Courses
-![TJCS](https://flat.badgen.net/static/Tongji/CS/yellow)
-![stars](https://flat.badgen.net/github/stars/youknowwhom/TongjiCS-Undergraduate-Courses)
+![TJCS](https://flat.badgen.net/static/Tongji/CS)
+![stars](https://flat.badgen.net/github/stars/youknowwhom/TongjiCS-Undergraduate-Courses/yellow)
 ![me](https://flat.badgen.net/static/powered%20by/Bryan%20Zheng/F96854)
 
 ## 💡初衷
